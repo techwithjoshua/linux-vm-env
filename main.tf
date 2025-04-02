@@ -16,6 +16,6 @@ provider "azurerm" {
 
 # creates resource group
 resource "azurerm_resource_group" "terraform_test" {
-  name     = "terraform-test"
-  location = "East US"
+  name     = var.resource_group_name
+  location = var.resource_group_location
 }
