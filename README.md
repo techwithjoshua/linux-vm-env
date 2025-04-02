@@ -11,7 +11,7 @@ az login
 
 3. Set Azure Subscription to use with "subscription_id" variable in local "terraform.tfvars" file
 ```
-subscription_id = "<subscription-id>"
+echo "subscription_id = '<subscription-id>'" >> terraform.tfvars
 ```
 
 4. Initialize Terraform Configuration
