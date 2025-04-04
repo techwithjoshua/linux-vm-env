@@ -5,3 +5,7 @@ output "resource_group_id" {
 output "vnet_id" {
   value = module.linux_vm_env.vnet_id
 }
+
+output "subnet_id" {
+  value = module.linux_vm_env.subnet_id
+}
