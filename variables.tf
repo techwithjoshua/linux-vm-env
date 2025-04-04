@@ -25,3 +25,15 @@ variable "subnet_name" {
 variable "subnet_address_prefixes" {
   default = ["10.0.1.0/24"]
 }
+
+variable "public_ip_name" {
+  default = "linux_vm_env_public_ip"
+}
+
+variable "public_ip_allocation_method" {
+  default = "Dynamic"
+}
+
+variable "public_ip_sku" {
+  default = "Basic"
+}

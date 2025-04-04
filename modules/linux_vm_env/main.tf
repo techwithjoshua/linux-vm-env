@@ -15,3 +15,11 @@ resource "azurerm_subnet" "linux_vm_env_subnet" {
     azurerm_virtual_network.linux_vm_env_vnet
   ]
 }
+
+resource "azurerm_public_ip" "linux_vm_env_public_ip" {
+  name                = var.public_ip_name
+  resource_group_name = var.public_ip_resource_group_name
+  location            = var.public_ip_location
+  allocation_method   = var.public_ip_allocation_method
+  sku                 = var.public_ip_sku
+}

@@ -9,3 +9,7 @@ output "vnet_id" {
 output "subnet_id" {
   value = module.linux_vm_env.subnet_id
 }
+
+output "public_ip_id" {
+  value = module.linux_vm_env.public_ip_id
+}
