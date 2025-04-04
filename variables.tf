@@ -37,3 +37,15 @@ variable "public_ip_allocation_method" {
 variable "public_ip_sku" {
   default = "Basic"
 }
+
+variable "nic_name" {
+  default = "linux_vm_env_network_interface"
+}
+
+variable "nic_ip_config_name" {
+  default = "linux_vm_env_nic_ip_config_name"
+}
+
+variable "nic_ip_config_private_allocation" {
+  default = "Dynamic"
+}

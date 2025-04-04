@@ -13,3 +13,9 @@ variable "public_ip_resource_group_name" {}
 variable "public_ip_location" {}
 variable "public_ip_allocation_method" {}
 variable "public_ip_sku" {}
+
+variable "nic_name" {}
+variable "nic_location" {}
+variable "nic_resource_group_name" {}
+variable "nic_ip_config_name" {}
+variable "nic_ip_config_private_allocation" {}

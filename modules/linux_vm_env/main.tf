@@ -23,3 +23,21 @@ resource "azurerm_public_ip" "linux_vm_env_public_ip" {
   allocation_method   = var.public_ip_allocation_method
   sku                 = var.public_ip_sku
 }
+
+resource "azurerm_network_interface" "linux_vm_env_network_interface" {
+  name                = var.nic_name
+  location            = var.nic_location
+  resource_group_name = var.nic_resource_group_name
+
+  ip_configuration {
+    name                          = var.nic_ip_config_name
+    subnet_id                     = azurerm_subnet.linux_vm_env_subnet.id
+    private_ip_address_allocation = var.nic_ip_config_private_allocation
+    public_ip_address_id          = azurerm_public_ip.linux_vm_env_public_ip.id
+  }
+
+  depends_on = [
+    azurerm_subnet.linux_vm_env_subnet,
+    azurerm_public_ip.linux_vm_env_public_ip
+  ]
+}

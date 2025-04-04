@@ -13,3 +13,11 @@ output "subnet_id" {
 output "public_ip_id" {
   value = module.linux_vm_env.public_ip_id
 }
+
+output "network_interface_id" {
+  value = module.linux_vm_env.network_interface_id
+}
+
+output "network_interface_mac" {
+  value = module.linux_vm_env.network_interface_mac
+}
