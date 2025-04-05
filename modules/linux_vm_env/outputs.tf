@@ -25,3 +25,11 @@ output "network_security_group_id" {
 output "nic_nsg_association_id" {
   value = azurerm_network_interface_security_group_association.linux_vm_env_nic_nsg_association.id
 }
+
+output "virtual_machine_id" {
+  value = azurerm_linux_virtual_machine.linux_vm_env_virtual_machine.id
+}
+
+output "virtual_machine_os_disk_id" {
+  value = azurerm_linux_virtual_machine.linux_vm_env_virtual_machine.os_disk[0].id
+}

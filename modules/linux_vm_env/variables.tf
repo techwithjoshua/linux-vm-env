@@ -23,3 +23,16 @@ variable "nic_ip_config_private_allocation" {}
 variable "nsg_name" {}
 variable "nsg_location" {}
 variable "nsg_resource_group_name" {}
+
+variable "vm_name" {}
+variable "vm_resource_group_name" {}
+variable "vm_location" {}
+variable "vm_size" {}
+variable "vm_admin_username" {}
+variable "vm_os_disk_name" {}
+variable "vm_os_disk_caching" {}
+variable "vm_os_disk_storage_account_type" {}
+variable "vm_image_publisher" {}
+variable "vm_image_offer" {}
+variable "vm_image_sku" {}
+variable "vm_image_version" {}

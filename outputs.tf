@@ -29,3 +29,11 @@ output "network_security_group_id" {
 output "nic_nsg_association_id" {
   value = module.linux_vm_env.nic_nsg_association_id
 }
+
+output "virtual_machine_id" {
+  value = module.linux_vm_env.virtual_machine_id
+}
+
+output "virtual_machine_os_disk_id" {
+  value = module.linux_vm_env.virtual_machine_os_disk_id
+}

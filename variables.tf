@@ -53,3 +53,43 @@ variable "nic_ip_config_private_allocation" {
 variable "nsg_name" {
   default = "linux_vm_env_network_security_group"
 }
+
+variable "vm_name" {
+  default = "linux_vm_env_virtual_machine"
+}
+
+variable "vm_size" {
+  default = "Standard_B2ats_v2"
+}
+
+variable "vm_admin_username" {
+  default = ""
+}
+
+variable "vm_os_disk_name" {
+  default = "linux_vm_env_os_disk"
+}
+
+variable "vm_os_disk_caching" {
+  default = "ReadWrite"
+}
+
+variable "vm_os_disk_storage_account_type" {
+  default = "Standard_LRS"
+}
+
+variable "vm_image_publisher" {
+  default = "Canonical"
+}
+
+variable "vm_image_offer" {
+  default = "0001-com-ubuntu-server-jammy"
+}
+
+variable "vm_image_sku" {
+  default = "22_04-lts-gen2"
+}
+
+variable "vm_image_version" {
+  default = "latest"
+}

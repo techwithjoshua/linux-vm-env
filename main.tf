@@ -49,4 +49,17 @@ module "linux_vm_env" {
   nsg_name                = var.nsg_name
   nsg_location            = azurerm_resource_group.terraform_linux_vm_env.location
   nsg_resource_group_name = azurerm_resource_group.terraform_linux_vm_env.name
+
+  vm_name                         = var.vm_name
+  vm_resource_group_name          = azurerm_resource_group.terraform_linux_vm_env.name
+  vm_location                     = azurerm_resource_group.terraform_linux_vm_env.location
+  vm_size                         = var.vm_size
+  vm_admin_username               = var.vm_admin_username
+  vm_os_disk_name                 = var.vm_os_disk_name
+  vm_os_disk_caching              = var.vm_os_disk_caching
+  vm_os_disk_storage_account_type = var.vm_os_disk_storage_account_type
+  vm_image_publisher              = var.vm_image_publisher
+  vm_image_offer                  = var.vm_image_offer
+  vm_image_sku                    = var.vm_image_sku
+  vm_image_version                = var.vm_image_version
 }
