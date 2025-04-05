@@ -45,4 +45,8 @@ module "linux_vm_env" {
   nic_resource_group_name          = azurerm_resource_group.terraform_linux_vm_env.name
   nic_ip_config_name               = var.nic_ip_config_name
   nic_ip_config_private_allocation = var.nic_ip_config_private_allocation
+
+  nsg_name                = var.nsg_name
+  nsg_location            = azurerm_resource_group.terraform_linux_vm_env.location
+  nsg_resource_group_name = azurerm_resource_group.terraform_linux_vm_env.name
 }

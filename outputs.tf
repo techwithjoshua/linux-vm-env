@@ -21,3 +21,7 @@ output "network_interface_id" {
 output "network_interface_mac" {
   value = module.linux_vm_env.network_interface_mac
 }
+
+output "network_security_group_id" {
+  value = module.linux_vm_env.network_security_group_id
+}

@@ -19,3 +19,7 @@ variable "nic_location" {}
 variable "nic_resource_group_name" {}
 variable "nic_ip_config_name" {}
 variable "nic_ip_config_private_allocation" {}
+
+variable "nsg_name" {}
+variable "nsg_location" {}
+variable "nsg_resource_group_name" {}

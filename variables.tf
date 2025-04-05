@@ -49,3 +49,7 @@ variable "nic_ip_config_name" {
 variable "nic_ip_config_private_allocation" {
   default = "Dynamic"
 }
+
+variable "nsg_name" {
+  default = "linux_vm_env_network_security_group"
+}

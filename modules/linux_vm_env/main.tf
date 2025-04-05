@@ -41,3 +41,9 @@ resource "azurerm_network_interface" "linux_vm_env_network_interface" {
     azurerm_public_ip.linux_vm_env_public_ip
   ]
 }
+
+resource "azurerm_network_security_group" "linux_vm_env_network_security_group" {
+  name                = var.nsg_name
+  location            = var.nsg_location
+  resource_group_name = var.nsg_resource_group_name
+}

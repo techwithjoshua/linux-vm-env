@@ -17,3 +17,7 @@ output "network_interface_id" {
 output "network_interface_mac" {
   value = azurerm_network_interface.linux_vm_env_network_interface.mac_address
 }
+
+output "network_security_group_id" {
+  value = azurerm_network_security_group.linux_vm_env_network_security_group.id
+}
