@@ -26,6 +26,10 @@ output "network_security_group_id" {
   value = module.linux_vm_env.network_security_group_id
 }
 
+output "nsg_ssh_rule_id" {
+  value = module.linux_vm_env.nsg_ssh_rule_id
+}
+
 output "nic_nsg_association_id" {
   value = module.linux_vm_env.nic_nsg_association_id
 }

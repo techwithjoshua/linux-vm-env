@@ -24,6 +24,8 @@ variable "nsg_name" {}
 variable "nsg_location" {}
 variable "nsg_resource_group_name" {}
 
+variable "nsg_ssh_rule_resource_group_name" {}
+
 variable "vm_name" {}
 variable "vm_resource_group_name" {}
 variable "vm_location" {}

@@ -50,6 +50,8 @@ module "linux_vm_env" {
   nsg_location            = azurerm_resource_group.terraform_linux_vm_env.location
   nsg_resource_group_name = azurerm_resource_group.terraform_linux_vm_env.name
 
+  nsg_ssh_rule_resource_group_name = azurerm_resource_group.terraform_linux_vm_env.name
+
   vm_name                         = var.vm_name
   vm_resource_group_name          = azurerm_resource_group.terraform_linux_vm_env.name
   vm_location                     = azurerm_resource_group.terraform_linux_vm_env.location

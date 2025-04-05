@@ -48,6 +48,22 @@ resource "azurerm_network_security_group" "linux_vm_env_network_security_group" 
   resource_group_name = var.nsg_resource_group_name
 }
 
+resource "azurerm_network_security_rule" "linux_vm_env_nsg_ssh_rule" {
+  name                        = "linux_vm_env_nsg_ssh_rule"
+  description                 = "Allows Inbound SSH Access"
+  resource_group_name         = var.nsg_ssh_rule_resource_group_name
+  network_security_group_name = azurerm_network_security_group.linux_vm_env_network_security_group.name
+
+  priority                   = 100
+  direction                  = "Inbound"
+  access                     = "Allow"
+  protocol                   = "Tcp"
+  source_port_range          = "*"
+  destination_port_range     = "22"
+  source_address_prefix      = "*"
+  destination_address_prefix = "*"
+}
+
 resource "azurerm_network_interface_security_group_association" "linux_vm_env_nic_nsg_association" {
   network_interface_id      = azurerm_network_interface.linux_vm_env_network_interface.id
   network_security_group_id = azurerm_network_security_group.linux_vm_env_network_security_group.id

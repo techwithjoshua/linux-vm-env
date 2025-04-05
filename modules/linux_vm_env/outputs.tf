@@ -22,6 +22,10 @@ output "network_security_group_id" {
   value = azurerm_network_security_group.linux_vm_env_network_security_group.id
 }
 
+output "nsg_ssh_rule_id" {
+  value = azurerm_network_security_rule.linux_vm_env_nsg_ssh_rule.id
+}
+
 output "nic_nsg_association_id" {
   value = azurerm_network_interface_security_group_association.linux_vm_env_nic_nsg_association.id
 }
