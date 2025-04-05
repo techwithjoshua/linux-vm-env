@@ -47,3 +47,8 @@ resource "azurerm_network_security_group" "linux_vm_env_network_security_group" 
   location            = var.nsg_location
   resource_group_name = var.nsg_resource_group_name
 }
+
+resource "azurerm_network_interface_security_group_association" "linux_vm_env_nic_nsg_association" {
+  network_interface_id      = azurerm_network_interface.linux_vm_env_network_interface.id
+  network_security_group_id = azurerm_network_security_group.linux_vm_env_network_security_group.id
+}

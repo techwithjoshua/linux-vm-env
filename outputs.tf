@@ -25,3 +25,7 @@ output "network_interface_mac" {
 output "network_security_group_id" {
   value = module.linux_vm_env.network_security_group_id
 }
+
+output "nic_nsg_association_id" {
+  value = module.linux_vm_env.nic_nsg_association_id
+}
