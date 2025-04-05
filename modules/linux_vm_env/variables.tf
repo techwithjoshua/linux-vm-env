@@ -28,6 +28,7 @@ variable "vm_name" {}
 variable "vm_resource_group_name" {}
 variable "vm_location" {}
 variable "vm_size" {}
+variable "vm_computer_name" {}
 variable "vm_admin_username" {}
 variable "vm_os_disk_name" {}
 variable "vm_os_disk_caching" {}

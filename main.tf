@@ -54,6 +54,7 @@ module "linux_vm_env" {
   vm_resource_group_name          = azurerm_resource_group.terraform_linux_vm_env.name
   vm_location                     = azurerm_resource_group.terraform_linux_vm_env.location
   vm_size                         = var.vm_size
+  vm_computer_name                = var.vm_computer_name
   vm_admin_username               = var.vm_admin_username
   vm_os_disk_name                 = var.vm_os_disk_name
   vm_os_disk_caching              = var.vm_os_disk_caching

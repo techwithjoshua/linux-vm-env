@@ -62,6 +62,10 @@ variable "vm_size" {
   default = "Standard_B2ats_v2"
 }
 
+variable "vm_computer_name" {
+  default = "linux-vm-env-virtual-machine"
+}
+
 variable "vm_admin_username" {
   default = ""
 }
