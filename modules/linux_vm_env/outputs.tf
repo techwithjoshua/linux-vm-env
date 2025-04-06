@@ -1,3 +1,7 @@
+output "resource_group_id" {
+  value = azurerm_resource_group.linux_vm_env_rg.id
+}
+
 output "vnet_id" {
   value = azurerm_virtual_network.linux_vm_env_vnet.id
 }

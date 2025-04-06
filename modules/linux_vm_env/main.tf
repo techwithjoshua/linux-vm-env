@@ -1,13 +1,18 @@
+resource "azurerm_resource_group" "linux_vm_env_rg" {
+  name     = var.resource_group_name
+  location = var.resource_group_location
+}
+
 resource "azurerm_virtual_network" "linux_vm_env_vnet" {
   name                = var.vnet_name
-  location            = var.vnet_location
-  resource_group_name = var.vnet_resource_group_name
+  location            = azurerm_resource_group.linux_vm_env_rg.location
+  resource_group_name = azurerm_resource_group.linux_vm_env_rg.name
   address_space       = var.vnet_address_space
 }
 
 resource "azurerm_subnet" "linux_vm_env_subnet" {
   name                 = var.subnet_name
-  resource_group_name  = var.subnet_resource_group_name
+  resource_group_name  = azurerm_resource_group.linux_vm_env_rg.name
   virtual_network_name = var.subnet_virtual_network_name
   address_prefixes     = var.subnet_address_prefixes
 
@@ -18,16 +23,16 @@ resource "azurerm_subnet" "linux_vm_env_subnet" {
 
 resource "azurerm_public_ip" "linux_vm_env_public_ip" {
   name                = var.public_ip_name
-  resource_group_name = var.public_ip_resource_group_name
-  location            = var.public_ip_location
+  resource_group_name = azurerm_resource_group.linux_vm_env_rg.name
+  location            = azurerm_resource_group.linux_vm_env_rg.location
   allocation_method   = var.public_ip_allocation_method
   sku                 = var.public_ip_sku
 }
 
 resource "azurerm_network_interface" "linux_vm_env_network_interface" {
   name                = var.nic_name
-  location            = var.nic_location
-  resource_group_name = var.nic_resource_group_name
+  location            = azurerm_resource_group.linux_vm_env_rg.location
+  resource_group_name = azurerm_resource_group.linux_vm_env_rg.name
 
   ip_configuration {
     name                          = var.nic_ip_config_name
@@ -44,14 +49,14 @@ resource "azurerm_network_interface" "linux_vm_env_network_interface" {
 
 resource "azurerm_network_security_group" "linux_vm_env_network_security_group" {
   name                = var.nsg_name
-  location            = var.nsg_location
-  resource_group_name = var.nsg_resource_group_name
+  location            = azurerm_resource_group.linux_vm_env_rg.location
+  resource_group_name = azurerm_resource_group.linux_vm_env_rg.name
 }
 
 resource "azurerm_network_security_rule" "linux_vm_env_nsg_ssh_rule" {
   name                        = "linux_vm_env_nsg_ssh_rule"
   description                 = "Allows Inbound SSH Access"
-  resource_group_name         = var.nsg_ssh_rule_resource_group_name
+  resource_group_name         = azurerm_resource_group.linux_vm_env_rg.name
   network_security_group_name = azurerm_network_security_group.linux_vm_env_network_security_group.name
 
   priority                   = 100
@@ -71,8 +76,8 @@ resource "azurerm_network_interface_security_group_association" "linux_vm_env_ni
 
 resource "azurerm_linux_virtual_machine" "linux_vm_env_virtual_machine" {
   name                = var.vm_name
-  resource_group_name = var.vm_resource_group_name
-  location            = var.vm_location
+  resource_group_name = azurerm_resource_group.linux_vm_env_rg.name
+  location            = azurerm_resource_group.linux_vm_env_rg.location
   size                = var.vm_size
   computer_name       = var.vm_computer_name
   admin_username      = var.vm_admin_username

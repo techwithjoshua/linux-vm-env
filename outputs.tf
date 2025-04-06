@@ -1,5 +1,5 @@
 output "resource_group_id" {
-  value = azurerm_resource_group.terraform_linux_vm_env.id
+  value = module.linux_vm_env.resource_group_id
 }
 
 output "vnet_id" {

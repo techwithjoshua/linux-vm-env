@@ -3,7 +3,7 @@ variable "subscription_id" {
 }
 
 variable "resource_group_name" {
-  default = "terraform_linux_vm_env"
+  default = "linux_vm_env_rg"
 }
 
 variable "resource_group_location" {
